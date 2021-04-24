@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<bindings version="2.1" xmlns="http://java.sun.com/xml/ns/jaxb">
+  <!--
+
+Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.2 
+Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
+Généré le : 2021.04.24 à 06:39:08 PM CEST 
+
+  -->
+  <bindings scd="x-schema::tns" xmlns:tns="http://www.alternalis.fr/banksgateway/controllers/soap">
+    <schemaBindings map="false">
+      <package name="fr.alternalis.banksgateway.controllers.soap"/>
+    </schemaBindings>
+    <bindings scd="tns:debitForUserRequest">
+      <class ref="fr.alternalis.banksgateway.controllers.soap.DebitForUserRequest"/>
+    </bindings>
+    <bindings scd="tns:creditForUserRequest">
+      <class ref="fr.alternalis.banksgateway.controllers.soap.CreditForUserRequest"/>
+    </bindings>
+    <bindings scd="tns:getDebitResponse">
+      <class ref="fr.alternalis.banksgateway.controllers.soap.GetDebitResponse"/>
+    </bindings>
+    <bindings scd="tns:getCreditResponse">
+      <class ref="fr.alternalis.banksgateway.controllers.soap.GetCreditResponse"/>
+    </bindings>
+  </bindings>
+</bindings>
+
