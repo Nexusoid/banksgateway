@@ -3,7 +3,6 @@ package fr.alternalis.banksgateway.services;
 import fr.alternalis.banksgateway.iservices.IGatewayService;
 import fr.alternalis.banksgateway.xml.request.TransactionRequestXml;
 import fr.alternalis.banksgateway.xml.response.ResponseXml;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
