@@ -16,24 +16,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java pour anonymous complex type.
- * 
- * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
- * 
- * <pre>
- * &lt;complexType&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element name="username" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="value" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
- * 
- * 
+ * SOAP formatted request for a credit.
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -49,7 +32,7 @@ public class CreditForUserRequest {
     protected String value;
 
     /**
-     * Obtient la valeur de la propriété username.
+     * Get the value of the property username.
      * 
      * @return
      *     possible object is
@@ -61,7 +44,7 @@ public class CreditForUserRequest {
     }
 
     /**
-     * Définit la valeur de la propriété username.
+     * Define the value of the property username.
      * 
      * @param value
      *     allowed object is
@@ -73,7 +56,7 @@ public class CreditForUserRequest {
     }
 
     /**
-     * Obtient la valeur de la propriété value.
+     * Get the value of the property value.
      * 
      * @return
      *     possible object is
@@ -85,7 +68,7 @@ public class CreditForUserRequest {
     }
 
     /**
-     * Définit la valeur de la propriété value.
+     * Define the value of the property value.
      * 
      * @param value
      *     allowed object is

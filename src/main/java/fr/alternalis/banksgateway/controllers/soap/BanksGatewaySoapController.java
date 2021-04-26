@@ -11,6 +11,9 @@ import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
+/**
+ * Controller responsible for the SOAP web service.
+ */
 @Endpoint
 public class BanksGatewaySoapController {
 
@@ -23,6 +26,11 @@ public class BanksGatewaySoapController {
         this.gatewayService = gatewayService;
     }
 
+    /**
+     * Function called when a credit request is made.
+     * @param request containing the username and the value for the credit.
+     * @return A GetCreditResponse that contain the response of the server.
+     */
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "creditForUserRequest")
     @ResponsePayload
     public GetCreditResponse makeCredit(@RequestPayload CreditForUserRequest request){
@@ -53,6 +61,11 @@ public class BanksGatewaySoapController {
         return response;
     }
 
+    /**
+     * Function called when a debit request is made.
+     * @param request containing the username and the value for the debit.
+     * @return A GetDebitResponse that contain the response of the server.
+     */
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "debitForUserRequest")
     @ResponsePayload
     public GetDebitResponse makeDebit(@RequestPayload DebitForUserRequest request){
