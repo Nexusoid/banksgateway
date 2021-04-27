@@ -12,10 +12,11 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class GatewayService implements IGatewayService {
 
-    /**
-     * @param BANKS_SERVER is the bank web address.
-     */
-    public static final String BANKS_SERVER = "http://localhost:8080/rest/xml/user/transaction";
+    //Address of the local service. (Useful for testing)
+    //public static final String BANKS_SERVER = "http://localhost:8080/banks/rest/xml/user/transaction";
+
+    //Address of the docker service.
+    public static final String BANKS_SERVER = "http://Banks:8080/banks/rest/xml/user/transaction";
 
     /**
      * Function that make a request to the bank.
@@ -27,7 +28,7 @@ public class GatewayService implements IGatewayService {
         RestTemplate template = new RestTemplate();
 
         ResponseXml response = template.postForObject(BANKS_SERVER, request, ResponseXml.class);
-        return response.getValue();
+        return response != null ? response.getValue() : null;
     }
 
 }
