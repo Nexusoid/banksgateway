@@ -40,23 +40,23 @@ public class BanksGatewaySoapController {
         try{
             valueDouble = Double.parseDouble(request.getValue());
         } catch(NumberFormatException e){
-            response.setResponse("Indicated value incorrect.");
+            response.setResponse("Indicated value incorrect");
             return response;
         }
         if(valueDouble != 0){
             xmlRequest = new TransactionRequestXml(request.getUsername(), valueDouble.toString());
             Integer responseInt = gatewayService.makeBanksCall(xmlRequest);
             if(responseInt == 0){
-                response.setResponse("Successfully credited user.");
+                response.setResponse("Successfully credited user");
             }
             if(responseInt == 1){
-                response.setResponse("The bank was unable to find the user.");
+                response.setResponse("The bank was unable to find the user");
             }
             if(responseInt == 2){
-                response.setResponse("Value was not accepted by the bank.");
+                response.setResponse("Value was not accepted by the bank");
             }
         } else {
-            response.setResponse("Can't make a credit for a value of 0.");
+            response.setResponse("Can't make a credit for a value of 0");
         }
         return response;
     }
@@ -77,23 +77,23 @@ public class BanksGatewaySoapController {
             valueDouble = valueDouble * -1;
             valueDouble = BigDecimal.valueOf(valueDouble).setScale(2, RoundingMode.HALF_UP).doubleValue();
         } catch (NumberFormatException e){
-            response.setResponse("Indicated value incorrect.");
+            response.setResponse("Indicated value incorrect");
             return response;
         }
         if(valueDouble != 0){
             xmlRequest = new TransactionRequestXml(request.getUsername(), valueDouble.toString());
             Integer responseInt = gatewayService.makeBanksCall(xmlRequest);
             if(responseInt == 0){
-                response.setResponse("Successfully credited user.");
+                response.setResponse("Successfully credited user");
             }
             if(responseInt == 1){
-                response.setResponse("The bank was unable to find the user.");
+                response.setResponse("The bank was unable to find the user");
             }
             if(responseInt == 2){
-                response.setResponse("Value was not accepted by the bank.");
+                response.setResponse("Value was not accepted by the bank");
             }
         } else {
-            response.setResponse("Can't make a debit for a value of 0.");
+            response.setResponse("Can't make a debit for a value of 0");
         }
         return response;
     }

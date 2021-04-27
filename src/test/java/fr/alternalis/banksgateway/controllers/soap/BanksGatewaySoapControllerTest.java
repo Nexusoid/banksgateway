@@ -32,14 +32,14 @@ public class BanksGatewaySoapControllerTest {
     public void testCredit() throws Exception {
         this.webClient.post().uri("/soap/banksgateway")
                 .accept(MediaType.TEXT_XML).contentType(MediaType.TEXT_XML).body(BodyInserters.fromValue(creditRequest))
-                .exchange().expectStatus().isOk();
+                .exchange().expectStatus().isOk().expectBody().xpath("//*[local-name()='response']").isEqualTo("The bank was unable to find the user");
     }
 
     @Test
     public void testDebit() throws Exception {
         this.webClient.post().uri("/soap/banksgateway")
                 .accept(MediaType.TEXT_XML).contentType(MediaType.TEXT_XML).body(BodyInserters.fromValue(debitRequest))
-                .exchange().expectStatus().isOk();
+                .exchange().expectStatus().isOk().expectBody().xpath("//*[local-name()='response']").isEqualTo("The bank was unable to find the user");
     }
 
     private static final String creditRequest = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\"\n" +
@@ -47,7 +47,7 @@ public class BanksGatewaySoapControllerTest {
             "    <soapenv:Header/>\n" +
             "    <soapenv:Body>\n" +
             "        <gs:creditForUserRequest>\n" +
-            "            <gs:username>Tristan</gs:username>\n" +
+            "            <gs:username>Test</gs:username>\n" +
             "            <gs:value>10</gs:value>\n" +
             "        </gs:creditForUserRequest>\n" +
             "    </soapenv:Body>\n" +
@@ -58,7 +58,7 @@ public class BanksGatewaySoapControllerTest {
             "    <soapenv:Header/>\n" +
             "    <soapenv:Body>\n" +
             "        <gs:debitForUserRequest>\n" +
-            "            <gs:username>Tristan</gs:username>\n" +
+            "            <gs:username>Test</gs:username>\n" +
             "            <gs:value>10</gs:value>\n" +
             "        </gs:debitForUserRequest>\n" +
             "    </soapenv:Body>\n" +
